@@ -12,12 +12,22 @@ def play_game():
         print('Welcome Madlib Game.')
         madlib = get_random_mad_lib()
         blanks = madlib['blanks']
-        value = madlib['value']
+        values = madlib['value']
+        word_list = []
         for blank in blanks:
             word = input(f'{blank}: ')
-            index = blanks.index(blank)
-            value[index] += word
-        print(' '.join(value))
+            word_list.append(word)
+        print(values)
+        for num in range(len(values) - 2):
+            print(values[num])
+            values[num] = values[num] + word_list[num]
+            print(values[num])
+        matlib = []
+        for value in values:
+            matlib.append(value)
+        matlib.remove(0)
+        print(matlib)
+        print(''.join(matlib))
         play = input('Press y for "Yes" or n for "No"')
         if play == 'y':
             is_playing = True
