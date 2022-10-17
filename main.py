@@ -17,16 +17,12 @@ def play_game():
         for blank in blanks:
             word = input(f'{blank}: ')
             word_list.append(word)
-        print(values)
         for num in range(len(values) - 2):
-            print(values[num])
             values[num] = values[num] + word_list[num]
-            print(values[num])
         matlib = []
         for value in values:
             matlib.append(value)
         matlib.remove(0)
-        print(matlib)
         print(''.join(matlib))
         play = input('Press y for "Yes" or n for "No"')
         if play == 'y':
